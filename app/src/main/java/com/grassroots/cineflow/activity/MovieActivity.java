@@ -39,6 +39,7 @@ public class MovieActivity extends AppCompatActivity {
     private void initTitle() {
         TextView tvTitle = findViewById(R.id.tv_title);
         tvTitle.setText("电影票");
+        tvTitle.setTextColor(getResources().getColor(R.color.black));
         TextView tvBack = findViewById(R.id.tv_back);
         tvBack.setOnClickListener(new View.OnClickListener() {
             @Override

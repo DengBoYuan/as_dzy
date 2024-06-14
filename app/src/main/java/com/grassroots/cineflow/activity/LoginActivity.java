@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.grassroots.cineflow.R;
 import com.grassroots.cineflow.service.BusinessResult;
+import com.grassroots.cineflow.service.NetworkMonitorService;
 import com.grassroots.cineflow.service.UserService;
 import com.grassroots.cineflow.sqlite.User;
 import com.grassroots.cineflow.utils.CurrentUserUtils;
@@ -19,12 +20,12 @@ import com.grassroots.cineflow.utils.CurrentUserUtils;
 public class LoginActivity extends AppCompatActivity {
 
     /**
-     * 登录按钮,注册按钮
+     * 登录按钮, 注册按钮, 关于按钮
      */
     private Button btnLogin, btnRegister, btnAbout;
 
     /**
-     * 用户名输入框,密码输入框
+     * 用户名输入框, 密码输入框
      */
     private EditText etUsername, etPassword;
 
@@ -66,11 +67,15 @@ public class LoginActivity extends AppCompatActivity {
                 if (login.isSuccess()) {
                     CurrentUserUtils.setCurrentUser(login.getData());
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+
+                    // 启动网络监听服务
+                    startService(new Intent(LoginActivity.this, NetworkMonitorService.class));
+
                     startActivity(intent);
                     finish();
-                }else {
+                } else {
                     // 登录失败
-                     Toast.makeText(LoginActivity.this, login.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, login.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -81,6 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         btnAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

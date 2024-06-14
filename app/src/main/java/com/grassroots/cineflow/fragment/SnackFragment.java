@@ -44,6 +44,7 @@ public class SnackFragment extends Fragment {
     private void initTitle() {
         TextView tvTitle = getView().findViewById(R.id.tv_title);
         tvTitle.setText("零食");
+        tvTitle.setTextColor(getResources().getColor(R.color.black));
         TextView tvBack = getView().findViewById(R.id.tv_back);
         tvBack.setVisibility(View.GONE);
     }
@@ -99,11 +100,6 @@ public class SnackFragment extends Fragment {
         singleItem5.setPrice("￥15");
 
         List<SingleItem> list = new ArrayList<>();
-        list.add(singleItem1);
-        list.add(singleItem2);
-        list.add(singleItem3);
-        list.add(singleItem4);
-        list.add(singleItem5);
         list.add(singleItem1);
         list.add(singleItem2);
         list.add(singleItem3);

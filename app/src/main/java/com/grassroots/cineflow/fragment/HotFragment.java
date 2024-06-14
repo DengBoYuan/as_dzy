@@ -43,7 +43,8 @@ public class HotFragment extends Fragment {
 
     private void initTitle() {
         TextView tvTitle = getView().findViewById(R.id.tv_title);
-        tvTitle.setText("去看电影");
+        tvTitle.setText("电影票");
+        tvTitle.setTextColor(getResources().getColor(R.color.black));
         TextView tvBack = getView().findViewById(R.id.tv_back);
         tvBack.setVisibility(View.GONE);
     }
@@ -70,55 +71,50 @@ public class HotFragment extends Fragment {
     private List<SingleItem> getSingleItemList() {
         SingleItem singleItem1 = new SingleItem();
         singleItem1.setType(1);
-        singleItem1.setTitle("涉过愤怒的海");
-        singleItem1.setImageId(R.mipmap.ic_hot_1);
-        singleItem1.setScore("评分：7.7");
-        singleItem1.setContent1("编剧: 曹保平 / 武皮皮 / 焦华静");
-        singleItem1.setContent2("主演: 黄渤 / 周迅 / 祖峰 / 张宥浩 / 周依然");
-        singleItem1.setPrice("￥30起");
+        singleItem1.setTitle("走走停停");
+        singleItem1.setImageId(R.mipmap.img_3);
+        singleItem1.setScore("评分：7.9");
+        singleItem1.setContent1("导演：龙飞");
+        singleItem1.setContent2("主演: 胡歌 / 高圆圆 / 岳红 / 周野芒 / 金靖");
+        singleItem1.setPrice("￥30");
 
         SingleItem singleItem2 = new SingleItem();
         singleItem2.setType(1);
-        singleItem2.setTitle("我本是高山");
-        singleItem2.setImageId(R.mipmap.ic_hot_2);
-        singleItem2.setScore("暂无评分");
-        singleItem2.setContent1("编剧: 袁媛 / 陈麒凌");
-        singleItem2.setContent2("主演: 海清 / 陈永胜 / 柴烨 / 王玥婷 / 万国鹏");
-        singleItem2.setPrice("￥35起");
+        singleItem2.setTitle("机器人之梦 Robot Dreams");
+        singleItem2.setImageId(R.mipmap.img_4);
+        singleItem2.setScore("评分：9.0");
+        singleItem2.setContent1("导演: 巴勃罗·贝格尔");
+        singleItem2.setContent2("主演:  伊万·拉班达 / 阿尔伯特·特里佛·塞加拉");
+        singleItem2.setPrice("￥35");
 
         SingleItem singleItem3 = new SingleItem();
         singleItem3.setType(1);
-        singleItem3.setTitle("刀尖");
-        singleItem3.setImageId(R.mipmap.ic_hot_3);
-        singleItem3.setScore("评分：6.2");
-        singleItem3.setContent1("编剧: 乌玛 / 某小丫");
-        singleItem3.setContent2("主演: 张译 / 黄志忠 / 郎月婷 / 成泰燊 / 沙溢");
-        singleItem3.setPrice("￥25起");
+        singleItem3.setTitle("疯狂的麦克斯：狂暴女神 Furiosa: A Mad Max Saga");
+        singleItem3.setImageId(R.mipmap.img_5);
+        singleItem3.setScore("评分：7.5");
+        singleItem3.setContent1("导演: 乔治·米勒");
+        singleItem3.setContent2("主演:  安雅·泰勒-乔伊 / 克里斯·海姆斯沃斯");
+        singleItem3.setPrice("￥25");
 
         SingleItem singleItem4 = new SingleItem();
         singleItem4.setType(1);
-        singleItem4.setTitle("蜡笔小新：新次元！");
-        singleItem4.setImageId(R.mipmap.ic_hot_4);
-        singleItem4.setScore("评分：8.1");
-        singleItem4.setContent1("编剧: 大根仁");
-        singleItem4.setContent2("主演: 小林由美子 / 楢桥美纪 / 森川智之 / 兴梠里美 / 真柴摩利");
-        singleItem4.setPrice("￥31起");
+        singleItem4.setTitle("谈判专家");
+        singleItem4.setImageId(R.mipmap.img_6);
+        singleItem4.setScore("评分：7.4");
+        singleItem4.setContent1("导演: 邱礼涛");
+        singleItem4.setContent2("主演: 刘青云 / 吴镇宇 / 刘德华 / 苗侨伟 / 姜皓文");
+        singleItem4.setPrice("￥31");
 
         SingleItem singleItem5 = new SingleItem();
         singleItem5.setType(1);
-        singleItem5.setTitle("星愿 Wish");
-        singleItem5.setImageId(R.mipmap.ic_hot_5);
-        singleItem5.setScore("评分：6.7");
-        singleItem5.setContent1("编剧: 珍妮弗·李 / 艾莉森·摩尔 / 克里斯·巴克 / 弗恩·维拉桑托恩 / 卡洛斯·洛佩斯·埃斯特拉达 / 安德鲁·罗斯柴尔德");
-        singleItem5.setContent2("主演: 阿丽亚娜·德博斯 / 克里斯·派恩 / 艾伦·图代克 / 安吉丽卡·布拉尔 / 维克多·加博");
-        singleItem5.setPrice("￥27起");
+        singleItem5.setTitle("扫黑·决不放弃");
+        singleItem5.setImageId(R.mipmap.img_7);
+        singleItem5.setScore("评分：6.9");
+        singleItem5.setContent1("导演: 五百");
+        singleItem5.setContent2("主演:  肖央 / 余皑磊 / 范丞丞 / 李诚儒 / 耿乐");
+        singleItem5.setPrice("￥27");
 
         List<SingleItem> list = new ArrayList<>();
-        list.add(singleItem1);
-        list.add(singleItem2);
-        list.add(singleItem3);
-        list.add(singleItem4);
-        list.add(singleItem5);
         list.add(singleItem1);
         list.add(singleItem2);
         list.add(singleItem3);
