@@ -18,6 +18,7 @@ import com.grassroots.cineflow.service.SingleItemService;
 import com.grassroots.cineflow.sqlite.SingleItem;
 import com.grassroots.cineflow.utils.CurrentUserUtils;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class MovieActivity extends AppCompatActivity {
@@ -69,8 +70,18 @@ public class MovieActivity extends AppCompatActivity {
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                clearAll();
                 Toast.makeText(MovieActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void clearAll() {
+        BusinessResult<List<SingleItem>> result = SingleItemService.getByUserIdAndType(CurrentUserUtils.getCurrentUser().getId(), 1);
+        List<SingleItem> data = result.getData();
+        for(int i=0;i<data.size();i++){
+            SingleItem item = data.get(i);
+            SingleItemService.deleteById(item.getId());
+        }
     }
 }

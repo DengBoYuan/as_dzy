@@ -69,8 +69,17 @@ public class SnackActivity extends AppCompatActivity {
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(SnackActivity.this, "该功能暂未开放", Toast.LENGTH_SHORT).show();
+                clearAll();
+                Toast.makeText(SnackActivity.this, "支付成功", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    private void clearAll() {
+        BusinessResult<List<SingleItem>> result = SingleItemService.getByUserIdAndType(CurrentUserUtils.getCurrentUser().getId(), 2);
+        List<SingleItem> data = result.getData();
+        for(int i=0;i<data.size();i++){
+            SingleItem item = data.get(i);
+            SingleItemService.deleteById(item.getId());
+        }
     }
 }
