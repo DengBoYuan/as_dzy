@@ -105,11 +105,6 @@ public class SnackFragment extends Fragment {
         list.add(singleItem3);
         list.add(singleItem4);
         list.add(singleItem5);
-        list.add(singleItem1);
-        list.add(singleItem2);
-        list.add(singleItem3);
-        list.add(singleItem4);
-        list.add(singleItem5);
         return list;
     }
 }
