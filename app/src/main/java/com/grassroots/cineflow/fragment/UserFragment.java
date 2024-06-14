@@ -25,7 +25,6 @@ public class UserFragment extends Fragment {
 
     private TextView tvUsername;
 
-    private ImageView ivService1, ivService2, ivService3, ivService4;
 
     private LinearLayout llMovie, llSnack;
 
@@ -47,10 +46,6 @@ public class UserFragment extends Fragment {
     private void initView() {
         tvUsername = getView().findViewById(R.id.tv_username);
         tvUsername.setText(String.format("用户昵称：%s", CurrentUserUtils.getCurrentUser().getUsername()));
-        ivService1 = getView().findViewById(R.id.iv_service1);
-        ivService2 = getView().findViewById(R.id.iv_service2);
-        ivService3 = getView().findViewById(R.id.iv_service3);
-        ivService4 = getView().findViewById(R.id.iv_service4);
         llMovie = getView().findViewById(R.id.ll_movie);
         llSnack = getView().findViewById(R.id.ll_snack);
         btnLogout = getView().findViewById(R.id.btn_logout);
@@ -77,30 +72,6 @@ public class UserFragment extends Fragment {
                 getActivity().finish();
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
-            }
-        });
-        ivService1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "该功能暂未开放", Toast.LENGTH_SHORT).show();
-            }
-        });
-        ivService2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "该功能暂未开放", Toast.LENGTH_SHORT).show();
-            }
-        });
-        ivService3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "该功能暂未开放", Toast.LENGTH_SHORT).show();
-            }
-        });
-        ivService4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "该功能暂未开放", Toast.LENGTH_SHORT).show();
             }
         });
     }
