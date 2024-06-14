@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@mipmap/bg_norma" />
+        android:src="@mipmap/bg_normal" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="80dp"
+                android:backgroundTint="@color/blue"
                 android:text="注册" />
 
         </LinearLayout>

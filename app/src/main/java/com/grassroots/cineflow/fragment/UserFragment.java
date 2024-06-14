@@ -46,6 +46,7 @@ public class UserFragment extends Fragment {
     private void initView() {
         tvUsername = getView().findViewById(R.id.tv_username);
         tvUsername.setText(String.format("用户昵称：%s", CurrentUserUtils.getCurrentUser().getUsername()));
+        tvUsername.setTextColor(getResources().getColor(R.color.black));
         llMovie = getView().findViewById(R.id.ll_movie);
         llSnack = getView().findViewById(R.id.ll_snack);
         btnLogout = getView().findViewById(R.id.btn_logout);

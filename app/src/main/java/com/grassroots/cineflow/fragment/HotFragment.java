@@ -44,6 +44,7 @@ public class HotFragment extends Fragment {
     private void initTitle() {
         TextView tvTitle = getView().findViewById(R.id.tv_title);
         tvTitle.setText("去看电影");
+        tvTitle.setTextColor(getResources().getColor(R.color.black));
         TextView tvBack = getView().findViewById(R.id.tv_back);
         tvBack.setVisibility(View.GONE);
     }
